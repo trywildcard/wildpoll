@@ -11,8 +11,8 @@ defmodule JokerPoll.PollsController do
    #HTTPoison.post("https://1cb66526.ngrok.com/poll", Poison.encode!(params["polls"]), [{"Content-Type", "application/json"}])
     dict = params["polls"]
     answers = params["polls"] 
-      |> Enum.filter(fn({key, value}) -> String.starts_with?(key, "answer") end) 
-      |> Enum.flat_map(fn({key, value}) -> [value] end)
+      |> Enum.filter(fn({key, _value}) -> String.starts_with?(key, "answer") end) 
+      |> Enum.flat_map(fn({_key, value}) -> [value] end)
 
     dict = Dict.put(dict, :answers, answers)
     dict = Dict.put(dict, "mandatory", String.to_atom(dict["mandatory"]))
