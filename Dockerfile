@@ -6,7 +6,6 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
     echo 'deb-src https://deb.nodesource.com/node_0.10 trusty main' >> /etc/apt/sources.list.d/nodesource.list
 
 RUN apt-get update && apt-get install -y nodejs
-#RUN ln -s `which nodejs` /usr/local/bin/node
 
 ADD . /opt/wildpoll
 WORKDIR /opt/wildpoll
