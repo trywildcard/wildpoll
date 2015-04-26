@@ -19,6 +19,11 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+# These get overwritten in prod by prod.secret.exs
+config :joker_poll, :poll_endpoint,
+  url: "http://localhost:8080/poll",
+  token: "changeme"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
