@@ -1,5 +1,5 @@
-defmodule JokerPoll.PollsController do
-  use JokerPoll.Web, :controller
+defmodule WildPoll.PollsController do
+  use WildPoll.Web, :controller
 
   plug :action
 
@@ -10,8 +10,8 @@ defmodule JokerPoll.PollsController do
   def create(conn, params) do
    #HTTPoison.post("https://1cb66526.ngrok.com/poll", Poison.encode!(params["polls"]), [{"Content-Type", "application/json"}])
     dict = params["polls"]
-    answers = params["polls"] 
-      |> Enum.filter(fn({key, _value}) -> String.starts_with?(key, "answer") end) 
+    answers = params["polls"]
+      |> Enum.filter(fn({key, _value}) -> String.starts_with?(key, "answer") end)
       |> Enum.flat_map(fn({_key, value}) -> [value] end)
 
     dict = Dict.put(dict, :answers, answers)

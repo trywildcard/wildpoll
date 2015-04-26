@@ -1,5 +1,5 @@
-defmodule JokerPoll.PageController do
-  use JokerPoll.Web, :controller
+defmodule WildPoll.PageController do
+  use WildPoll.Web, :controller
 
   plug :action
 

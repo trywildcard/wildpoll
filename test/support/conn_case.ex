@@ -1,4 +1,4 @@
-defmodule JokerPoll.ConnCase do
+defmodule WildPoll.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -21,21 +21,21 @@ defmodule JokerPoll.ConnCase do
       use Phoenix.ConnTest
 
       # Alias the data repository and import query/model functions
-      alias JokerPoll.Repo
+      alias WildPoll.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
       # Import URL helpers from the router
-      import JokerPoll.Router.Helpers
+      import WildPoll.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint JokerPoll.Endpoint
+      @endpoint WildPoll.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(JokerPoll.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(WildPoll.Repo, [])
     end
 
     :ok

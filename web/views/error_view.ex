@@ -1,5 +1,5 @@
-defmodule JokerPoll.ErrorView do
-  use JokerPoll.Web, :view
+defmodule WildPoll.ErrorView do
+  use WildPoll.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found - 404"

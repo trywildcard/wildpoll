@@ -1,12 +1,12 @@
-defmodule JokerPoll.Web do
+defmodule WildPoll.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use JokerPoll.Web, :controller
-      use JokerPoll.Web, :view
+      use WildPoll.Web, :controller
+      use WildPoll.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -27,12 +27,12 @@ defmodule JokerPoll.Web do
       use Phoenix.Controller
 
       # Alias the data repository and import query/model functions
-      alias JokerPoll.Repo
+      alias WildPoll.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
       # Import URL helpers from the router
-      import JokerPoll.Router.Helpers
+      import WildPoll.Router.Helpers
     end
   end
 
@@ -44,7 +44,7 @@ defmodule JokerPoll.Web do
       import Phoenix.Controller, only: [get_flash: 2]
 
       # Import URL helpers from the router
-      import JokerPoll.Router.Helpers
+      import WildPoll.Router.Helpers
 
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
@@ -56,7 +56,7 @@ defmodule JokerPoll.Web do
       use Phoenix.Channel
 
       # Alias the data repository and import query/model functions
-      alias JokerPoll.Repo
+      alias WildPoll.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 

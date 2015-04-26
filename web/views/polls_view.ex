@@ -1,3 +1,3 @@
-defmodule JokerPoll.PollsView do
-  use JokerPoll.Web, :view
+defmodule WildPoll.PollsView do
+  use WildPoll.Web, :view
 end

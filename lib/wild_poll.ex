@@ -1,4 +1,4 @@
-defmodule JokerPoll do
+defmodule WildPoll do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -8,23 +8,23 @@ defmodule JokerPoll do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(JokerPoll.Endpoint, []),
+      supervisor(WildPoll.Endpoint, []),
       # Start the Ecto repository
-      worker(JokerPoll.Repo, []),
+      worker(WildPoll.Repo, []),
       # Here you could define other workers and supervisors as children
-      # worker(JokerPoll.Worker, [arg1, arg2, arg3]),
+      # worker(WildPoll.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: JokerPoll.Supervisor]
+    opts = [strategy: :one_for_one, name: WildPoll.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    JokerPoll.Endpoint.config_change(changed, removed)
+    WildPoll.Endpoint.config_change(changed, removed)
     :ok
   end
 end

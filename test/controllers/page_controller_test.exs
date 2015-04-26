@@ -1,5 +1,5 @@
-defmodule JokerPoll.PageControllerTest do
-  use JokerPoll.ConnCase
+defmodule WildPoll.PageControllerTest do
+  use WildPoll.ConnCase
 
   test "GET /" do
     conn = get conn(), "/"

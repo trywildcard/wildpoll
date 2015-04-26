@@ -1,4 +1,4 @@
-defmodule JokerPoll.Router do
+defmodule WildPoll.Router do
   use Phoenix.Router
 
   pipeline :browser do
@@ -14,13 +14,13 @@ defmodule JokerPoll.Router do
   scope "/" do
     pipe_through :browser # Use the default browser stack
 
-    get "/", JokerPoll.PageController, :index
-    get "/hello", JokerPoll.HelloController, :index
-    resources "/polls", JokerPoll.PollsController
+    get "/", WildPoll.PageController, :index
+    get "/hello", WildPoll.HelloController, :index
+    resources "/polls", WildPoll.PollsController
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", JokerPoll do
+  # scope "/api", WildPoll do
   #   pipe_through :api
   # end
 end

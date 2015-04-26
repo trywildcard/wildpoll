@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :joker_poll, JokerPoll.Endpoint,
+config :wild_poll, WildPoll.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :joker_poll, JokerPoll.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :joker_poll, JokerPoll.Repo,
+config :wild_poll, WildPoll.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "joker_poll_test",
+  database: "wild_poll_test",
   size: 1,
   max_overflow: false

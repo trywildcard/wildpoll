@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :joker_poll, JokerPoll.Endpoint,
+config :wild_poll, WildPoll.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -14,7 +14,7 @@ config :joker_poll, JokerPoll.Endpoint,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch"]]
 
 # Watch static and templates for browser reloading.
-config :joker_poll, JokerPoll.Endpoint,
+config :wild_poll, WildPoll.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif)$},
@@ -27,8 +27,8 @@ config :joker_poll, JokerPoll.Endpoint,
 config :logger, :console, format: "[$level] $message\n"
 
 # Configure your database
-config :joker_poll, JokerPoll.Repo,
+config :wild_poll, WildPoll.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "joker_poll_dev"
+  database: "wild_poll_dev"

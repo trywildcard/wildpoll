@@ -6,12 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :joker_poll, JokerPoll.Endpoint,
+config :wild_poll, WildPoll.Endpoint,
   url: [host: "localhost"],
   root: Path.expand("..", __DIR__),
   secret_key_base: "N57hdP5wOfhOW8WWrpciC+IaZMBsynicTAmfBm4lREG+diOR0Rqb/R4BJ81VnDlK",
   debug_errors: false,
-  pubsub: [name: JokerPoll.PubSub,
+  pubsub: [name: WildPoll.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
@@ -20,7 +20,7 @@ config :logger, :console,
   metadata: [:request_id]
 
 # These get overwritten in prod by prod.secret.exs
-config :joker_poll, :poll_endpoint,
+config :wild_poll, :poll_endpoint,
   url: "http://localhost:8080/poll",
   token: "changeme"
 

@@ -1,9 +1,9 @@
-defmodule JokerPoll.Endpoint do
-  use Phoenix.Endpoint, otp_app: :joker_poll
+defmodule WildPoll.Endpoint do
+  use Phoenix.Endpoint, otp_app: :wild_poll
 
   # Serve at "/" the given assets from "priv/static" directory
   plug Plug.Static,
-    at: "/", from: :joker_poll,
+    at: "/", from: :wild_poll,
     only: ~w(css images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -25,9 +25,9 @@ defmodule JokerPoll.Endpoint do
 
   plug Plug.Session,
     store: :cookie,
-    key: "_joker_poll_key",
+    key: "_wild_poll_key",
     signing_salt: "lMkrbLP8",
     encryption_salt: "ks0vjWD5"
 
-  plug :router, JokerPoll.Router
+  plug :router, WildPoll.Router
 end
