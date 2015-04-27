@@ -5,12 +5,13 @@ exports.config = {
       joinTo: 'js/app.js'
       // To change the order of concatenation of files, explictly mention here
       // https://github.com/brunch/brunch/tree/stable/docs#concatenation
-      // order: {
-      //   before: [
-      //     'web/static/vendor/js/jquery-2.1.1.js',
-      //     'web/static/vendor/js/bootstrap.min.js'
-      //   ]
-      // }
+      //order: {
+      //  before: [
+      //    // 'web/static/vendor/js/jquery-2.1.1.js',
+      //    // 'web/static/vendor/js/jquery-2.1.1.js',
+      //    //'web/static/js/addBox.js'
+      //  ]
+      //}
     },
     stylesheets: {
       joinTo: 'css/app.css'
