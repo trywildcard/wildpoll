@@ -8,7 +8,6 @@ defmodule WildPoll.PollsController do
   end
 
   def create(conn, params) do
-   #HTTPoison.post("https://1cb66526.ngrok.com/poll", Poison.encode!(params["polls"]), [{"Content-Type", "application/json"}])
     dict = params["polls"]
     answers = params["polls"]
       |> Enum.filter(fn({key, _value}) -> String.starts_with?(key, "answer") end)
@@ -17,11 +16,9 @@ defmodule WildPoll.PollsController do
     dict = Dict.put(dict, :answers, answers)
     dict = Dict.put(dict, "mandatory", String.to_atom(dict["mandatory"]))
 
-    IO.puts "Reached create method"
-    IO.puts answers
-    IO.puts Poison.encode!(dict)
-    #taking out unauthed endpoint for public repo
-    HTTPoison.post("http://example.com", Poison.encode!(dict), %{"Content-type" => "application/json"})
+    endpoint = Application.get_env(:wild_poll, :poll_endpoint)
+    endpoint[:url] <> "?access_token=" <> endpoint[:token]
+        |> HTTPoison.post!(Poison.encode!(dict), %{"Content-type" => "application/json"})
 
     render conn, "index.html"
   end
