@@ -32,3 +32,4 @@ config :wild_poll, WildPoll.Repo,
   username: "postgres",
   password: "postgres",
   database: "wild_poll_dev"
+import_config "dev.secret.exs"

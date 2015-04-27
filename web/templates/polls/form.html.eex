@@ -15,27 +15,22 @@
     <label for="polls[question]">Question</label>
     <input type="text" name="polls[question]" class="form-control" value='<%= Dict.get(@polls, "question") %>'/>
   </div>
-  <div class="form-group">
+  <div class="form-group answer-box">
     <label for="polls[answer1]">Answer 1</label>
     <input type="text" name="polls[answer1]" class="form-control" value='<%= Dict.get(@polls, "answer1") %>'/>
   </div>
-  <div class="form-group">
+  <div class="form-group answer-box">
     <label for="polls[answer2]">Answer 2</label>
     <input type="text" name="polls[answer2]" class="form-control" value='<%= Dict.get(@polls, "answer2") %>'/>
   </div>
-  <div class="form-group">
-    <label for="polls[answer3]">Answer 3</label>
-    <input type="text" name="polls[answer3]" class="form-control" value='<%= Dict.get(@polls, "answer3") %>'/>
-  </div>
-  <div class="form-group">
-    <label for="polls[answer4]">Answer 4</label>
-    <input type="text" name="polls[answer4]" class="form-control" value='<%= Dict.get(@polls, "answer4") %>'/>
-  </div>
+  <div id="addBoxHere"></div>
+  <h5><a href="#" id="addBox">Add Another Answer</a></h2>
+  <h5><a href="#" id="removeBox">Remove Answer Box</a></h2>
   <div class="form-group">
     <label for="polls[mandatory]">Mandatory</label>
     <select name="polls[mandatory]" class="form-control" value='<%= Dict.get(@polls, "mandatory") %>'/>
       <option value="true">True</option> 
-      <option value="false">False</option>
+      <option value="false" selected>False</option>
     </select>
   </div>
   <div class="form-group">
