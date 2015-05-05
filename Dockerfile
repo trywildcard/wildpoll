@@ -16,6 +16,7 @@ RUN mix local.hex --force
 ADD . /opt/wildpoll
 ENV MIX_ENV prod
 RUN mix do deps.get, deps.compile, compile
+RUN node_modules/brunch/bin/brunch build
 
 EXPOSE 4000
 CMD mix phoenix.server
