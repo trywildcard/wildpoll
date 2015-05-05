@@ -19,8 +19,10 @@ class App {
     });
     
     $('#removeBox').click(function() {
-      answerBoxNum -= 1;
-      $('.answer-box').last().remove();
+      if ($('.answer-box').length){
+        answerBoxNum -= 1;
+        $('.answer-box').last().remove();
+      }
       return false;
     });
   }
