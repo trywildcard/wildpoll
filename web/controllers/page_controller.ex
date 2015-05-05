@@ -4,7 +4,7 @@ defmodule WildPoll.PageController do
   plug :action
 
   def index(conn, _params) do
-    redirect(conn, to: "/polls")
+    redirect(conn, to: "/polls/new")
   end
 
   def heartbeat(conn, _params) do
