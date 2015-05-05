@@ -15,12 +15,11 @@ defmodule WildPoll.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", WildPoll.PageController, :index
-    get "/hello", WildPoll.HelloController, :index
     resources "/polls", WildPoll.PollsController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", WildPoll do
-  #   pipe_through :api
-  # end
+  scope "/heartbeat" do
+    pipe_through :api
+    get "/", WildPoll.PageController, :heartbeat
+  end
 end

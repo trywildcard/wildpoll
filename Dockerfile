@@ -7,11 +7,14 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 
 RUN apt-get update && apt-get install -y nodejs
 
-ADD . /opt/wildpoll
+RUN mkdir /opt/wildpoll
 WORKDIR /opt/wildpoll
-
+ADD package.json /opt/wildpoll/package.json
 RUN npm install
 RUN mix local.hex --force
+
+ADD . /opt/wildpoll
+ENV MIX_ENV prod
 RUN mix do deps.get, deps.compile, compile
 
 EXPOSE 4000

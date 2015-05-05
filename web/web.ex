@@ -16,20 +16,9 @@ defmodule WildPoll.Web do
   below.
   """
 
-  def model do
-    quote do
-      use Ecto.Model
-    end
-  end
-
   def controller do
     quote do
       use Phoenix.Controller
-
-      # Alias the data repository and import query/model functions
-      alias WildPoll.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
 
       # Import URL helpers from the router
       import WildPoll.Router.Helpers
@@ -54,12 +43,6 @@ defmodule WildPoll.Web do
   def channel do
     quote do
       use Phoenix.Channel
-
-      # Alias the data repository and import query/model functions
-      alias WildPoll.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
     end
   end
 

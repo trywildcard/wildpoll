@@ -4,6 +4,10 @@ defmodule WildPoll.PageController do
   plug :action
 
   def index(conn, _params) do
-    render conn, "index.html"
+    redirect(conn, to: "/polls")
+  end
+
+  def heartbeat(conn, _params) do
+    conn |> put_status(200) |> text("ok")
   end
 end

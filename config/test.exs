@@ -8,12 +8,3 @@ config :wild_poll, WildPoll.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
-
-# Configure your database
-config :wild_poll, WildPoll.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "wild_poll_test",
-  size: 1,
-  max_overflow: false

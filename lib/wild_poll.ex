@@ -9,10 +9,6 @@ defmodule WildPoll do
     children = [
       # Start the endpoint when the application starts
       supervisor(WildPoll.Endpoint, []),
-      # Start the Ecto repository
-      worker(WildPoll.Repo, []),
-      # Here you could define other workers and supervisors as children
-      # worker(WildPoll.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
